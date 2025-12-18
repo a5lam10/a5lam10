@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Dokumentasi Observasi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+      align-items: center;
+    }
+
+    .left, .right {
+      flex: 1;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .right {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.7;
+      text-align: justify;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="container">
+      <div class="left" id="groupPhoto">
+        <img src="foto-kelompok.jpg" alt="Foto Kelompok Peneliti" />
+      </div>
+      <div class="right" id="groupText">
+        <h2>Foto Bersama Tim Peneliti</h2>
+        <p>
+          Tiga foto bersama di sebelah kiri merupakan dokumentasi tim peneliti dan
+          pengembang <strong>TENSA</strong> dalam kegiatan lomba <em>InnoBit</em>.
+          Penulis pertama adalah <strong>Nirmala Dewi</strong> yang berada di posisi tengah.
+          Penulis kedua adalah <strong>Muhammad Aslam Kautsar Al Faruq</strong> yang berada
+          di posisi kanan. Penulis ketiga adalah <strong>Ashabiqul Arham</strong> yang berada
+          di sisi kiri, di samping penulis pertama.
+        </p>
+        <p>
+          Tim ini berasal dari <strong>Universitas Alauddin Makassar</strong> dan sedang
+          melakukan kegiatan observasi di <strong>SLB Hudaya Hasyim</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color:#ffffff;">
+    <div class="container">
+      <div class="left" id="schoolPhoto">
+        <img src="slb-hudaya-hasyim.jpg" alt="Gedung SLB Hudaya Hasyim" />
+      </div>
+      <div class="right" id="schoolText">
+        <h2>Profil SLB Hudaya Hasyim</h2>
+        <p>
+          SLB Hudaya Hasyim berdiri sejak tahun <strong>2018</strong> dan berlokasi di
+          Kecamatan <strong>Manggala</strong>, Kota <strong>Makassar</strong>, Provinsi
+          <strong>Sulawesi Selatan</strong>, Indonesia.
+        </p>
+        <p>
+          Sekolah ini memiliki sekitar <strong>30 siswa dan siswi</strong> yang didiagnosis
+          dengan berbagai kebutuhan khusus, antara lain <em>tunagrahita</em>,
+          <em>tunadaksa</em>, <em>tunanetra</em>, dan <em>tunarungu</em>.
+        </p>
+        <p>
+          Proses pembelajaran didukung oleh <strong>7 orang guru</strong> beserta
+          <strong>kepala sekolah</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div style="width:100%; max-width:1200px;">
+      <h2 style="text-align:center;">Galeri Karya</h2>
+      <div class="gallery">
+        <img src="KARYA SISWA SLB KHUSUS.jpg" alt="KARYA SISWA SLB KHUSUS">
+        <img src="KARYA SISWA SLB KHUSUS 2.jpg" alt="KARYA SISWA SLB KHUSUS 2">
+        <img src="KARYA SISWA SLB KHUSUS 3.jpg" alt="KARYA SISWA SLB KHUSUS 3">
+        <img src="KARYA SISWA SLB 4.jpg" alt="KARYA SISWA SLB 4">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const groupPhoto = document.getElementById('groupPhoto');
+    const groupText  = document.getElementById('groupText');
+    const schoolPhoto = document.getElementById('schoolPhoto');
+    const schoolText  = document.getElementById('schoolText');
+
+    window.addEventListener('load', () => {
+      groupPhoto.classList.add('show');
+
+      setTimeout(() => {
+        groupText.classList.add('show');
+      }, 3000);
+
+      setTimeout(() => {
+        schoolPhoto.classList.add('show');
+      }, 6000);
+
+      setTimeout(() => {
+        schoolText.classList.add('show');
+      }, 9000);
+    });
+  </script>
+
+</body>
+</html>
